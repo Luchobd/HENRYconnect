@@ -14,6 +14,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     AuthModule,
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     MongooseModule.forRoot(process.env.DB_URI!),
   ],
   providers: [
