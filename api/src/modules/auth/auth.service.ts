@@ -3,6 +3,9 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from '../../schema/user.schema';
 
+import { LocalSignUpDto } from '@modules/auth/dtos/auth.dtos';
+import { basicCrypt } from '@libs/crypting.lib';
+
 @Injectable()
 export class AuthService {
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
@@ -14,5 +17,25 @@ export class AuthService {
       throw new BadRequestException('User not found');
     }
     return matchedUser;
+  }
+
+  async localSignUp(dto: LocalSignUpDto) {
+    // await this.preventDuplicatedEmail(dto.email);
+    // await this.preventDuplicatedUsername(dto.username);
+
+    const hash = await basicCrypt(dto.password);
+    const newUser = await this.userModel.create({
+      data: {
+        firstname: dto.firstname,
+        lastname: dto.lastname,
+        username: dto.username,
+        email: dto.email,
+        country: dto.country,
+        city: dto.city,
+        state: dto.state,
+        hash,
+      },
+    });
+    return newUser;
   }
 }
