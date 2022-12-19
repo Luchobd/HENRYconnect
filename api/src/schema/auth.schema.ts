@@ -15,4 +15,4 @@ export class Auth {
   breed: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(Auth);
+export const AuthSchema = SchemaFactory.createForClass(Auth);
