@@ -6,16 +6,16 @@ import { educationStatus, tecnologies } from '../types/schema';
 
 export type UserDocument = HydratedDocument<User>;
 
-@Schema()
+@Schema({ versionKey: false })
 export class User {
   @Prop()
-  firstname: string;
+  firstName: string;
 
   @Prop()
-  lastname: string;
+  lastName: string;
 
   @Prop()
-  username: string;
+  userName: string;
 
   @Prop()
   country: string;

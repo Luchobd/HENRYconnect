@@ -20,12 +20,40 @@ export class AuthService {
   }
 
   async localSignUp(dto: LocalSignUpDto): Promise<User> {
-    // await this.preventDuplicatedEmail(dto.email);
-    // await this.preventDuplicatedUsername(dto.username);
-    console.log(dto);
+    await this.preventDuplicatedEmail(dto.email);
+    await this.preventDuplicatedUserName(dto.userName);
+
     const hash = await basicCrypt(dto.password);
-    const newDto = { ...dto, password: hash };
+    const newDto = { ...dto, hash };
     const newUser = await this.userModel.create(newDto);
     return newUser;
+  }
+
+  //Pure functions
+
+  //Prevent duplicated email
+  private async preventDuplicatedEmail(email: string) {
+    const matcheUser = await this.userModel.findOne({
+      where: {
+        email,
+      },
+    });
+
+    if (matcheUser) {
+      throw new BadRequestException('Email already exist');
+    }
+  }
+
+  //Prevent Duplicated userName
+  private async preventDuplicatedUserName(userName: string) {
+    const matcheUser = await this.userModel.findOne({
+      where: {
+        userName,
+      },
+    });
+
+    if (matcheUser) {
+      throw new BadRequestException('Username already exist');
+    }
   }
 }

@@ -7,7 +7,6 @@ import { APP_GUARD } from '@nestjs/core';
 import { AccessTokenGuard } from '@guards/access-token.guard';
 import { AuthModule } from '@modules/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
-import { MongoDbModule } from './mongodb/mongodb.module';
 
 @Module({
   imports: [

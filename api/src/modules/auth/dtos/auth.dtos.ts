@@ -8,21 +8,21 @@ export class LocalSignUpDto {
   @ApiProperty({
     type: String,
   })
-  firstname: string;
+  firstName: string;
 
   @IsNotEmpty()
   @IsString()
   @ApiProperty({
     type: String,
   })
-  lastname: string;
+  lastName: string;
 
   @IsNotEmpty()
   @IsString()
   @ApiProperty({
     type: String,
   })
-  username: string;
+  userName: string;
 
   @IsNotEmpty()
   @IsString()
