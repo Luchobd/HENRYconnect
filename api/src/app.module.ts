@@ -11,12 +11,11 @@ import { MongoDbModule } from './mongodb/mongodb.module';
 
 @Module({
   imports: [
+    MongooseModule.forRoot(process.env.DB_URI!),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
     AuthModule,
-    // MongoDbModule,
-    MongooseModule.forRoot(process.env.DB_URI!),
   ],
   providers: [
     {

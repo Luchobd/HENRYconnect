@@ -25,7 +25,7 @@ export class AuthService {
     console.log(dto);
     const hash = await basicCrypt(dto.password);
     const newDto = { ...dto, password: hash };
-    const newUser = new this.userModel(newDto);
-    return newUser.save();
+    const newUser = await this.userModel.create(newDto);
+    return newUser;
   }
 }
