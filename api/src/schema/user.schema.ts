@@ -26,11 +26,11 @@ export class User {
   @Prop()
   state: string;
 
-  @Prop()
-  educationStatus: educationStatus;
+  @Prop(educationStatus)
+  educationStatus: string;
 
-  @Prop()
-  tecnologies: tecnologies;
+  @Prop(tecnologies)
+  tecnologies: string;
 
   @Prop()
   currentLocation: string;

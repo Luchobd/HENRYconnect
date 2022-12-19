@@ -36,6 +36,8 @@ export class AuthService {
         hash,
       },
     });
+    console.log(dto);
+    console.log(newUser);
     return newUser;
   }
 }
