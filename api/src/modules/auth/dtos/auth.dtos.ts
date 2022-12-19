@@ -66,3 +66,18 @@ export class LocalSignUpDto {
   })
   educationStatus: educationStatus;
 }
+export class LocalSignInDto {
+  @IsNotEmpty()
+  @IsString()
+  @ApiProperty({
+    type: String,
+  })
+  email: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @ApiProperty({
+    type: String,
+  })
+  password: string;
+}

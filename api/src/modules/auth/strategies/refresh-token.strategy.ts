@@ -28,7 +28,7 @@ export class RefreshTokenStrategy extends PassportStrategy(
     if (!refreshToken) throw new ForbiddenException('Refresh token malformed');
 
     return {
-      donorId: sub,
+      userId: sub,
       profileId: profileId,
       ...payload,
       refreshToken,
