@@ -7,6 +7,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { AccessTokenGuard } from '@guards/access-token.guard';
 import { AuthModule } from '@modules/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { MongoDbModule } from './mongodb/mongodb.module';
 
 @Module({
   imports: [
@@ -14,8 +15,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     AuthModule,
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    MongooseModule.forRoot(process.env.DB_URI!),
+    MongoDbModule,
   ],
   providers: [
     {
