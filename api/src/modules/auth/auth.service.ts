@@ -19,23 +19,18 @@ export class AuthService {
     return matchedUser;
   }
 
-  async localSignUp(dto: LocalSignUpDto) {
+  async localSignUp(dto: LocalSignUpDto): Promise<User> {
     // await this.preventDuplicatedEmail(dto.email);
     // await this.preventDuplicatedUsername(dto.username);
-
+    console.log(dto);
     const hash = await basicCrypt(dto.password);
-    const newUser = await this.userModel.create({
-      data: {
-        firstname: dto.firstname,
-        lastname: dto.lastname,
-        username: dto.username,
-        email: dto.email,
-        country: dto.country,
-        city: dto.city,
-        state: dto.state,
-        hash,
-      },
-    });
-    return newUser;
+    const newDto = { ...dto, password: hash };
+
+    console.log(newDto);
+
+    const newUser = await this.userModel.create(newDto);
+    console.log(newUser);
+
+    return newUser.save();
   }
 }

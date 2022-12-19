@@ -15,7 +15,8 @@ import { MongoDbModule } from './mongodb/mongodb.module';
       isGlobal: true,
     }),
     AuthModule,
-    MongoDbModule,
+    // MongoDbModule,
+    MongooseModule.forRoot(process.env.DB_URI!),
   ],
   providers: [
     {
