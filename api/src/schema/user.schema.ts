@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import * as mongooseDelete from 'mongoose-delete';
 
 import { educationStatus, tecnologies } from '../types/schema';
 
@@ -8,10 +9,19 @@ export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User {
   @Prop()
-  name: string;
+  firstnName: string;
+
+  @Prop()
+  lastName: string;
+
+  @Prop()
+  userName: string;
 
   @Prop()
   country: string;
+
+  @Prop()
+  city: string;
 
   @Prop()
   educationStatus: educationStatus;
@@ -38,10 +48,16 @@ export class User {
   rBHash: string;
 
   @Prop()
+  rBHashExpires: number;
+
+  @Prop()
   cohorte: string;
 
   @Prop()
   photo: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(User);
+const UserSchema = SchemaFactory.createForClass(User);
+UserSchema.plugin(mongooseDelete, { deletedAt: true, overrideMethods: true });
+
+module.exports = { UserSchema };
