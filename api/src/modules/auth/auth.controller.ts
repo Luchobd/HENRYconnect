@@ -1,7 +1,7 @@
+import { Public } from '@decorators/public.decorator';
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LocalSignUpDto } from './dtos/auth.dtos';
-import { Public } from '@decorators/public.decorator';
 
 @Controller('auth')
 export class AuthController {
