@@ -5,7 +5,7 @@ import DropdownComponent from "../components/DropdownComponent";
 const LocationScreen = () => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.title}>
 
       <Text style={{
         fontSize: 30,
@@ -13,8 +13,8 @@ const LocationScreen = () => {
         marginTop: "20%"
       }}
       >Seleccione su ubicación</Text>
-      <DropdownComponent/>
       </View>
+      <DropdownComponent/>
     </View>
   );
 }
@@ -27,4 +27,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#AF84F1',
 
   },
+  title: {
+    backgroundColor: 'black',
+
+  }
 })

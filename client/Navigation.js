@@ -58,6 +58,7 @@ function MyTabs() {
         component={HomeScreen}
         options={{
             tabBarLabel: "",
+            headerShown: false,
         }}
 
       />
@@ -65,7 +66,8 @@ function MyTabs() {
         name="Location"
         component={LocationScreen}
         options={{
-            tabBarLabel: "",
+            tabBarLabel: "" ,
+            headerShown: false,
     
         }}
       />
@@ -74,6 +76,7 @@ function MyTabs() {
         component={UserScreen}
         options={{
             tabBarLabel: "",
+            headerShown: false,
   
         }}
       />

@@ -135,7 +135,7 @@ const DropdownComponent = () => {
           onChange={(item) => {
             setCountry(item.value);
             handleState(item.value);
-            setCountryName(item.label)
+            setCountryName(item.label);
             setIsFocus(false);
           }}
         />
@@ -158,7 +158,7 @@ const DropdownComponent = () => {
           onChange={(item) => {
             setState(item.value);
             handleCity(country, item.value);
-            setStateName(item.label)
+            setStateName(item.label);
             setIsFocus(false);
           }}
         />
@@ -180,11 +180,11 @@ const DropdownComponent = () => {
           onBlur={() => setIsFocus(false)}
           onChange={(item) => {
             setCity(item.value);
-            setCityName(item.label)
+            setCityName(item.label);
             setIsFocus(false);
           }}
         />
-    {/* <View
+        {/* <View
           style={{
             width: '100%',
             flexDirection: 'row',
@@ -224,52 +224,57 @@ const DropdownComponent = () => {
             </View>
           </TouchableOpacity>
         </View> */}
-<View
-        style={{
-            width: '100%',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            paddingVertical: 5,}}
-            >
-
-        <TouchableOpacity
+              </View>
+        <View
           style={{
+            width: "100%",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            paddingVertical: 5,
+            height: -10
+          }}
+        >
+          <TouchableOpacity
+            style={{
               backgroundColor: "#833CF0",
               padding: 20,
               borderRadius: 20,
               alignItems: "center",
             }}
-            onPress={() => Alert.alert(`Elegiste ${cityName}, ${stateName}, ${countryName}`)}
+            onPress={() =>
+              Alert.alert(`Elegiste ${cityName}, ${stateName}, ${countryName}`)
+            }
             // navigation.navigate("HomeScreen")}
-            >
-                <View
-                style={{
-                width: '100%',
+          >
+            <View
+              style={{
+                width: "100%",
                 height: 30,
                 // padding: 30,
 
                 borderRadius: 5,
-                
+
                 // borderColor: '#DEDEDE',
                 // borderWidth: 1,
-                justifyContent: 'center',
-                alignItems: 'center'}}>
-          <Text
-            style={{
-                color: "#ffffff",
-                // paddingVertical: 20,
-                textTransform: "uppercase",
-                //   fontWeight: "00",
-                fontSize: 16
-            }}
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-            ACEPTAR
-          </Text>
-              </View>
-        </TouchableOpacity>
-              </View>
-      </View>
+              <Text
+                style={{
+                  color: "#ffffff",
+                  // paddingVertical: 20,
+                  textTransform: "uppercase",
+                  //   fontWeight: "00",
+                  fontSize: 16,
+                }}
+              >
+                ACEPTAR
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
     </View>
   );
 };
