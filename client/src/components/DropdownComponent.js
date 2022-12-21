@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import axios from 'axios';
+const API_KEY = process.env.API_KEY
+const BASE_URL = process.env.BASE_URL
+// import {BASE_URL} from "@env"
 
 const data = [
   { label: 'Item 1', value: '1' },
@@ -16,9 +20,56 @@ const data = [
 ];
 
 const DropdownComponent = () => {
+    const [countryData, setCountryData]= useState([])
+    const [stateData, setStateData]= useState([])
+    const [cityData, setCityData]= useState([])
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
 
+  useEffect(()=> {
+var config = {
+  method: 'get',
+  url: `${BASE_URL}/countries`,
+  headers: {
+    'X-CSCAPI-KEY': 'API_KEY'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+  var count=Object.keys(response.data).length
+  let countryArray=[]
+  for (let i=0; i<count; i++) {
+    countryArray.push ({
+
+        value: response.data[i].iso2,
+        label: response.data[i].name,
+    })
+  }
+})
+.catch(function (error) {
+  console.log(error);
+});
+  })
+
+  const handleState =(countryCode)=> {
+    var config = {
+        method: 'get',
+        url: `${BASE_URL}/countries/${countryCode}/states`,
+        headers: {
+          'X-CSCAPI-KEY': 'API_KEY'
+        }
+      };
+      
+      axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 //   const renderLabel = () => {
 //     if (value || isFocus) {
 //       return (
@@ -43,7 +94,7 @@ const DropdownComponent = () => {
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
-        data={data}
+        data={countryData}
         search
         maxHeight={300}
         labelField="label"
