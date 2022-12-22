@@ -15,40 +15,69 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
-      screenOptions={{
+    
+    initialRouteName="Home"
+    screenOptions={({ route }) => ({
+        // headerStyle: {
+        //   elevation: 0,
+        //   backgroundColor: "#300F34",
+        // },
+        // headerTintColor: "#ffffff",
+        
+        // headerTitleAlign: "left",
+      
         tabBarStyle: {
-          backgroundColor: "#5947C2",
-        },
-        tabBarActiveBackgroundColor: "#5037B6",
+            backgroundColor: "#833CF0",
+            height: 76
+          },
+        //  tabBarActiveBackgroundColor: "#5037B6",
         tabBarActiveTintColor: "white",
-      }}
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === "Home") {
+            iconName = focused ? "home" : "home-outline";
+          } else if (route.name === "Location") {
+            iconName = focused ? "compass" : "compass-outline";
+          } else if (route.name === "User") {
+            iconName = focused ? "person" : "person-outline";
+          } else if (route.name === "Search") {
+            iconName = focused ? "search" : "search-outline";
+          } else if (route.name === "You") {
+            iconName = focused ? "person" : "person-outline";
+          }
+
+          return <Ionicons name={iconName} size={37} color={color} />;
+        },
+        tabBarActiveTintColor: "white",
+        tabBarInactiveTintColor: "#F4F2F6",
+      })}
     >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
-          ),
+            tabBarLabel: "",
+            headerShown: false,
         }}
+
       />
       <Tab.Screen
         name="Location"
         component={LocationScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-compass-outline" size={size} color={color} />
-          ),
+            tabBarLabel: "" ,
+            headerShown: false,
+    
         }}
       />
       <Tab.Screen
         name="User"
         component={UserScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="user" size={size} color={color} />
-          ),
+            tabBarLabel: "",
+            headerShown: false,
+  
         }}
       />
     </Tab.Navigator>
