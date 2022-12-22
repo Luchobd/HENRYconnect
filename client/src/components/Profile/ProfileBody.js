@@ -3,15 +3,13 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 export const ProfileBody = ({
-  name,
+  lastName,
+  firstName,
   profileImage,
   country,
   description,
-  status,
-  ubicacion,
-  post,
-  followers,
-  following,
+  educationStatus,
+  city,
 }) => {
   return (
     <View>
@@ -46,7 +44,7 @@ export const ProfileBody = ({
               fontWeight: 'bold',
               fontSize: 25
             }}>
-            {name}
+            {firstName} {lastName}
           </Text>
           <Text
             style={{
@@ -89,7 +87,7 @@ export const ProfileBody = ({
               fontSize: 14,
               fontWeight: 'bold',
             }}>
-            {status}
+            {educationStatus}
           </Text>
         </View>
         <View
@@ -106,14 +104,14 @@ export const ProfileBody = ({
               paddingVertical: 5,
               fontSize: 14,
             }}>
-            Ubicacion Actual: {ubicacion}
+            Ubicacion Actual: {city}
           </Text>
         </View>
     </View>
   );
 };
 
-export const ProfileButtons = ({id, name, accountName, profileImage}) => {
+export const ProfileButtons = ({id, firstName, lastName, profileImage,description,educationStatus}) => {
   const navigation = useNavigation();
   return (
     <>
@@ -128,7 +126,13 @@ export const ProfileButtons = ({id, name, accountName, profileImage}) => {
           }}>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('Stack')
+              navigation.push('Stack',{
+                firstName:firstName,
+                lastName:lastName,
+                profileImage:profileImage,
+                description:description,
+                educationStatus:educationStatus
+              })
             }
             style={{
               width: '100%',
