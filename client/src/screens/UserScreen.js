@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import {ProfileBody, ProfileButtons} from "../Profile/ProfileBody";
+import {ProfileBody, ProfileButtons} from "../components/Profile/ProfileBody"
 const UserScreen = () => {
   return (
     <View style={{width: '100%', height: '100%', backgroundColor: 'white'}}>

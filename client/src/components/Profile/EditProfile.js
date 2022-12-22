@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View} from 'react-native';
-import AccordionList from "../components/AccordionList";
 const EditProfile = () => {
   return (
     <View>

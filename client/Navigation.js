@@ -12,7 +12,7 @@ import StackScreen from "./src/screens/StackScreen";
 import UserScreen from "./src/screens/UserScreen";
 
 //stack
-import EditProfile from "./src/Profile/EditProfile";
+import EditProfile from "./src/components/Profile/EditProfile";
 
 
 const Tab = createBottomTabNavigator();
