@@ -98,7 +98,7 @@ const DropdownComponent = () => {
       })
       .catch(function (error) {
         console.log(error);
-      });
+      }); 
   };
 
   return (
