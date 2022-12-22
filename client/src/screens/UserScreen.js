@@ -6,21 +6,24 @@ const UserScreen = () => {
     <View style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
     <View style={{width: '100%', padding: 10}}>
       <ProfileBody
-        name="Mario Villalba"
+        lastName="Villalba"
+        firstName="Mario"
+        username="mariovillalba98"
         profileImage={require('../components/Profile/fotomario.png')}
         country="Argentina"
         description="Soy proactivo, me gusta programar y trabajar en equipo. Me egresé de Henry en 2022."
-        status="Egresado de Henry"
-        ubicacion="Buenos Aires"
-        followers="3.6M"
-        following="35"
-        post="458"
+        educationStatus="Egresado de Henry"
+        city="Buenos Aires"
+        email="villalbamario18@gmail.com"
+        password="lucho1234"
       />
       <ProfileButtons
         id={0}
-        name="obody"
-        accountName="mr_peobody"
+        firstName="Mario"
+        lastName="Villalba"
         profileImage={require('../components/Profile/fotomario.png')}
+        description="Soy proactivo, me gusta programar y trabajar en equipo. Me egresé de Henry en 2022."
+        educationStatus="Egresado de Henry"
       />
     </View>
     </View>
