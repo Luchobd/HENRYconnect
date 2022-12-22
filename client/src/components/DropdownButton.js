@@ -6,8 +6,8 @@ export default function DropdownButton() {
     <View style={styles.buttonView}>
     <TouchableOpacity
       style={styles.touchable}
-      onPress={() =>
-        Alert.alert(`Elegiste ${cityName}, ${stateName}, ${countryName}`)
+      onPress={() =>navigation.navigate("HomeScreen")
+        // Alert.alert(`Elegiste ${cityName}, ${stateName}, ${countryName}`)
       }
       // navigation.navigate("HomeScreen")}
     >

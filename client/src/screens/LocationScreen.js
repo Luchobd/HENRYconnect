@@ -7,12 +7,12 @@ import DropdownButton from "../components/DropdownButton";
 
 const LocationScreen = () => {
   return (
-  //   <LinearGradient
-  //   style={styles.container}
-  //   colors={["#B591EC", "#833CF0"]}
-  //   start={{ x: 0.5, y: 0 }}
-  //   end={{ x: 0.5, y: 1 }}
-  // >
+    <LinearGradient
+    style={styles.container}
+    colors={["#B591EC", "#833CF0"]}
+    start={{ x: 0.5, y: 0 }}
+    end={{ x: 0.5, y: 1 }}
+  >
     <View style={styles.container}>
       <View style={styles.title}>
 
@@ -29,7 +29,7 @@ const LocationScreen = () => {
       <DropdownButton/>
       </View>
     </View>
-//  </LinearGradient>
+ </LinearGradient>
   );
 }
 export default LocationScreen;
