@@ -99,7 +99,7 @@ const DropdownComponent = () => {
       .catch(function (error) {
         console.log(error);
       }); 
-  };
+  }; 
 
   return (
     <View style={styles.container}>
