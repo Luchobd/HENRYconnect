@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 // import DropdownComponent from "../components/location/DropdownComponent";
 // import ButtonForDropdown from "../components/location/DropdownButton";
 // import DropdownButton from "../components/location/DropdownButton";
-import Maps from "../components/location/Maps";
+// import Maps from "../components/location/Maps";
 
 const LocationScreen = () => {
   return (
@@ -27,7 +27,7 @@ const LocationScreen = () => {
           </Text>
         </View>
         <View>
-          <Maps />
+          {/* <Maps /> */}
           {/* <DropdownComponent/>
       <DropdownButton/> */}
         </View>
