@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function ButtonForDropdown() {
+export default function DropdownButton() {
   return (
     <View style={styles.buttonView}>
     <TouchableOpacity
