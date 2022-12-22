@@ -1,39 +1,43 @@
-import React from 'react';
-import {FlatList, View, StyleSheet} from 'react-native';
-import AccordionItem from '../AccordionItem';
-import PropTypes from 'prop-types';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from "react";
+import { FlatList, View, StyleSheet } from "react-native";
+import AccordionItem from "../AccordionItem";
+import PropTypes from "prop-types";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const AccordionList = () => {
   const data = [
     {
-      id:0,
+      id: 0,
       title: "Canales",
-      body: "Acá irian los canales"
+      body: "Acá irian los canales",
     },
     {
-      id:1,
+      id: 1,
       title: "Mensajes directos",
-      body: "Acá irian los mensajes"
+      body: "Acá irian los mensajes",
     },
     {
-      id:2,
+      id: 2,
       title: "Notificaciones",
-      body: "Acá irian las notificaciones"
+      body: "Acá irian las notificaciones",
     },
-
-  ]
+  ];
   return (
     <SafeAreaView>
-    <View style={styles.container}> 
-    <FlatList
-      data={data}
-      keyExtractor={(item) => item.id.toString()}
-      renderItem={({item}) => (
-        <AccordionItem title={item.title} bodyText={item.body}/>
-      )}
-    />
-    </View> 
+      <View style={styles.container}>
+        <FlatList
+          style={styles.flatList}
+          data={data}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <AccordionItem
+              title={item.title}
+              bodyText={item.body}
+              style={styles.item}
+            />
+          )}
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -59,9 +63,21 @@ export default AccordionList;
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: "2%",
-    paddingHorizontal: "3%",
+    paddingVertical: "20%",
+    paddingHorizontal: "10%",
     height: "100%",
-    backgroundColor: "#e7e7e7"
-  }
-})
+    fontSize: 19,
+    color: "#A8EB12",
+  },
+  flatList: {
+    fontSize: 19,
+    color: "#A8EB12",
+    // borderRadius: 40, 
+  },
+  //   item: {
+  // alignItems: "center",
+  // flexDirection: "row",
+  // paddingVertical: 10,
+  // paddingHorizontal: 20,
+  //   }
+});

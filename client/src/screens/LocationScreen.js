@@ -1,34 +1,46 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from "expo-linear-gradient";
 import DropdownComponent from "../components/DropdownComponent";
+import ButtonForDropdown from "../components/ButtonForDropdown";
 
 const LocationScreen = () => {
   return (
+  //   <LinearGradient
+  //   style={styles.container}
+  //   colors={["#B591EC", "#833CF0"]}
+  //   start={{ x: 0.5, y: 0 }}
+  //   end={{ x: 0.5, y: 1 }}
+  // >
     <View style={styles.container}>
       <View style={styles.title}>
 
       <Text style={{
-        fontSize: 30,
+        fontSize: 17,
         textAlign: "center",
         marginTop: "20%"
       }}
       >Seleccione su ubicación</Text>
       </View>
+      <View>
+
       <DropdownComponent/>
+      <ButtonForDropdown/>
+      </View>
     </View>
+//  </LinearGradient>
   );
 }
-
 export default LocationScreen;
 
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#AF84F1',
+    // backgroundColor: '#AF84F1',
 
   },
   title: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
 
   }
 })

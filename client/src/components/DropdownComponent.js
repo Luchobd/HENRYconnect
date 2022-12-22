@@ -224,57 +224,8 @@ const DropdownComponent = () => {
             </View>
           </TouchableOpacity>
         </View> */}
-              </View>
-        <View
-          style={{
-            width: "100%",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            paddingVertical: 5,
-            height: -10
-          }}
-        >
-          <TouchableOpacity
-            style={{
-              backgroundColor: "#833CF0",
-              padding: 20,
-              borderRadius: 20,
-              alignItems: "center",
-            }}
-            onPress={() =>
-              Alert.alert(`Elegiste ${cityName}, ${stateName}, ${countryName}`)
-            }
-            // navigation.navigate("HomeScreen")}
-          >
-            <View
-              style={{
-                width: "100%",
-                height: 30,
-                // padding: 30,
+      </View>
 
-                borderRadius: 5,
-
-                // borderColor: '#DEDEDE',
-                // borderWidth: 1,
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Text
-                style={{
-                  color: "#ffffff",
-                  // paddingVertical: 20,
-                  textTransform: "uppercase",
-                  //   fontWeight: "00",
-                  fontSize: 16,
-                }}
-              >
-                ACEPTAR
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
     </View>
   );
 };
@@ -323,4 +274,6 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 16,
   },
+
+
 });
