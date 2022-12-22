@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 //screens
 import HomeScreen from "./src/screens/HomeScreen";
@@ -10,7 +11,23 @@ import LocationScreen from "./src/screens/LocationScreen";
 import StackScreen from "./src/screens/StackScreen";
 import UserScreen from "./src/screens/UserScreen";
 
+//stack
+import EditProfile from "./src/Profile/EditProfile";
+
+
 const Tab = createBottomTabNavigator();
+const HomeStackNavigator = createNativeStackNavigator();
+
+function MyStack(){
+  return(
+      <HomeStackNavigator.Navigator
+      initialRouteName="UserScreen">
+      <HomeStackNavigator.Screen name="UserScreen" component={UserScreen} />
+      <HomeStackNavigator.Screen name="Stack" component={EditProfile}/>
+      </HomeStackNavigator.Navigator>
+  )
+}
+
 
 function MyTabs() {
   return (
@@ -73,7 +90,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="User"
-        component={UserScreen}
+        component={MyStack}
         options={{
             tabBarLabel: "",
             headerShown: false,
