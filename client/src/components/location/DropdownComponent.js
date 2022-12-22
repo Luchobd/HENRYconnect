@@ -27,13 +27,12 @@ const DropdownComponent = () => {
       method: "get",
       url: `${BASE_URL}/countries`,
       headers: {
-        "X-CSCAPI-KEY": "API_KEY",
+        "X-CSCAPI-KEY": "TnA1c09zRTZYd29ZYU1DbTh2anpCQXVNSUVJQU5kR202b0pTSGRJRw=="
       },
     };
 
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
         var count = Object.keys(response.data).length;
         let countryArray = [];
         for (let i = 0; i < count; i++) {
@@ -54,7 +53,7 @@ const DropdownComponent = () => {
       method: "get",
       url: `${BASE_URL}/countries/${countryCode}/states`,
       headers: {
-        "X-CSCAPI-KEY": "API_KEY",
+        "X-CSCAPI-KEY": "TnA1c09zRTZYd29ZYU1DbTh2anpCQXVNSUVJQU5kR202b0pTSGRJRw=="
       },
     };
 
@@ -75,22 +74,13 @@ const DropdownComponent = () => {
         console.log(error);
       });
   };
-  //   const renderLabel = () => {
-  //     if (value || isFocus) {
-  //       return (
-  //         <Text style={[styles.label, isFocus && { color: 'blue' }]}>
-  //           Dropdown label
-  //         </Text>
-  //       );
-  //     }
-  //     return null;
-  //   };
+
   const handleCity = (countryCode, stateCode) => {
     var config = {
       method: "get",
       url: `${BASE_URL}/countries/${countryCode}/states/${stateCode}/cities`,
       headers: {
-        "X-CSCAPI-KEY": "API_KEY",
+        "X-CSCAPI-KEY": "TnA1c09zRTZYd29ZYU1DbTh2anpCQXVNSUVJQU5kR202b0pTSGRJRw=="
       },
     };
     axios(config)
@@ -108,8 +98,8 @@ const DropdownComponent = () => {
       })
       .catch(function (error) {
         console.log(error);
-      });
-  };
+      }); 
+  }; 
 
   return (
     <View style={styles.container}>
@@ -129,7 +119,7 @@ const DropdownComponent = () => {
           labelField="label"
           valueField="value"
           placeholder={!isFocus ? "Seleccione país" : "..."}
-          searchPlaceholder="Search..."
+          searchPlaceholder="Buscar..."
           value={country}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -152,7 +142,7 @@ const DropdownComponent = () => {
           labelField="label"
           valueField="value"
           placeholder={!isFocus ? "Seleccione provincia o estado" : "..."}
-          searchPlaceholder="Search..."
+          searchPlaceholder="Buscar..."
           value={state}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -175,7 +165,7 @@ const DropdownComponent = () => {
           labelField="label"
           valueField="value"
           placeholder={!isFocus ? "Seleccione ciudad" : "..."}
-          searchPlaceholder="Search..."
+          searchPlaceholder="Buscar..."
           value={city}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
