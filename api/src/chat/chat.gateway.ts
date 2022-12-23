@@ -73,12 +73,17 @@ export class ChatGateway
   afterInit(server: any) {
     console.log(`Esto se ejecuta cuando inicia`);
   }
+  /**
+   * 
+   * @param client tiene información sobre los distintos clientes que se conectan
+   * Como su id por ejemplo 
+   */
 
-  handleConnection(client: any, ...args: any[]) {
+  handleConnection(client: Socket) {
     console.log(`Hola alguien se conecto al socket `);
   }
 
-  handleDisconnect(client: any) {
+  handleDisconnect(client: Socket) {
     console.log(`Alguien se desconecto del socket`);
   }
   /**
