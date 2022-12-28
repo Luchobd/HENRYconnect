@@ -13,6 +13,8 @@ import UserScreen from "./src/screens/UserScreen";
 
 //stack
 import EditProfile from "./src/components/Profile/EditProfile";
+import Loguin from "./src/screens/Loguin";
+import Registro from "./src/screens/Registro";
 
 
 const Tab = createBottomTabNavigator();
@@ -21,9 +23,12 @@ const HomeStackNavigator = createNativeStackNavigator();
 function MyStack(){
   return(
       <HomeStackNavigator.Navigator
-      initialRouteName="UserScreen">
+      initialRouteName="Loguin">
       <HomeStackNavigator.Screen name="UserScreen" component={UserScreen} />
+      <HomeStackNavigator.Screen name="Loguin" component={Loguin} />
+      <HomeStackNavigator.Screen name="Registro" component={Registro} />
       <HomeStackNavigator.Screen name="Stack" component={EditProfile}/>
+      <HomeStackNavigator.Screen name="HomeScreen" component={MyTabs} />
       </HomeStackNavigator.Navigator>
   )
 }
@@ -33,7 +38,7 @@ function MyTabs() {
   return (
     <Tab.Navigator
     
-    initialRouteName="Home"
+    
     screenOptions={({ route }) => ({
         // headerStyle: {
         //   elevation: 0,
@@ -90,7 +95,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="User"
-        component={MyStack}
+        component={UserScreen}
         options={{
             tabBarLabel: "",
             headerShown: false,
@@ -104,7 +109,7 @@ function MyTabs() {
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MyStack />
     </NavigationContainer>
   );
 }
