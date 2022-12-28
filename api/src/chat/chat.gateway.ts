@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /**
  * Este archivo es la puerta de enlace de este servioco de chat con socket.io 
  * Las Instalaciones necesarias son las siguientes 

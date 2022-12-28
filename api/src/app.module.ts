@@ -1,11 +1,26 @@
-/* eslint-disable prettier/prettier */
+import * as dotenv from 'dotenv';
+dotenv.config();
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ChatGateway } from './chat/chat.gateway';
+import { MongooseModule } from '@nestjs/mongoose';
+import { APP_GUARD } from '@nestjs/core';
+
+import { AccessTokenGuard } from '@guards/access-token.guard';
+import { AuthModule } from '@modules/auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
+
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService, ChatGateway],
+  imports: [
+    MongooseModule.forRoot(process.env.DB_URI!),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    AuthModule,
+  ],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: AccessTokenGuard,
+    },
+  ],
 })
 export class AppModule {}
