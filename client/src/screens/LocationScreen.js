@@ -1,10 +1,9 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-// import DropdownComponent from "../components/location/DropdownComponent";
-// import ButtonForDropdown from "../components/location/DropdownButton";
-// import DropdownButton from "../components/location/DropdownButton";
-import Maps from "../components/location/Maps";
+import DropdownComponent from "../components/location/DropdownComponent";
+import DropdownButton from "../components/location/DropdownButton";
+// import Maps from "../components/location/Maps";
 
 const LocationScreen = () => {
   return (
@@ -27,9 +26,9 @@ const LocationScreen = () => {
           </Text>
         </View>
         <View>
-          <Maps />
-          {/* <DropdownComponent/>
-      <DropdownButton/> */}
+          {/* <Maps /> */}
+          <DropdownComponent/> 
+      <DropdownButton/> 
         </View>
       </View>
     </LinearGradient>
