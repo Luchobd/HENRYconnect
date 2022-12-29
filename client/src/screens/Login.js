@@ -9,14 +9,10 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const imageOriginal = {
-  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672259058/Screenshot_2022-12-28_at_17.23.55_ofc09t.png ",
+const image = {
+  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672327364/Screenshot_2022-12-29_at_12.20.17_pn4bev.png",
 };
-const image1= { uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672326775/Screenshot_2022-12-29_at_12.11.54_w5svia.png"}
 
-const image2= { uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672326776/Screenshot_2022-12-29_at_12.11.13_k5m8r6.png"}
-
-const image3={ uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672326775/Screenshot_2022-12-29_at_12.10.20_bpcdnf.png"}
 
 const Login = () => {
   const navigation = useNavigation();
