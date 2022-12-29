@@ -18,10 +18,10 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <View style={styles.HenryContainer}>
+        {/* <View style={styles.HenryContainer}>
           <Text style={styles.Henry}>HENRY</Text>
           <Text style={styles.connect}>connect</Text>
-        </View>
+        </View> */}
         <View style={styles.inputContainers}>
           <TextInput placeholder="Ingresa tu email" style={styles.input} />
           <TextInput placeholder="Ingresa tu contraseña" style={styles.input} />
@@ -192,7 +192,18 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
+  // HenryContainer: {
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   flexDirection: "row",
+  // },
+  // Henry: {
+  //   fontFamily: "inter"
+  // },
+  // connect: {
+  //   fontFamily: "pacifico"
+  // }
 });
 
 export default Login;
