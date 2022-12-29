@@ -17,12 +17,15 @@ const LocationScreen = () => {
         <View style={styles.title}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: 22,
               textAlign: "center",
               marginTop: "20%",
+              color:"white",
+              fontWeight:"bold"
+              
             }}
           >
-            Seleccione su ubicación
+            Defina su ubicación
           </Text>
         </View>
         <View>
