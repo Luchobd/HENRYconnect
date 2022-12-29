@@ -14,7 +14,7 @@ export default function DropdownButton() {
       // navigation.navigate("HomeScreen")}
     >
       <View style={styles.textView}>
-        <Text style={styles.text}>ACEPTAR</Text>
+        <Text style={styles.text}>o activar geolocalización</Text>
       </View>
     </TouchableOpacity>
   </View>
@@ -33,9 +33,9 @@ const styles = StyleSheet.create({
         paddingVertical: "95%"
       },
 touchable: {
-    backgroundColor: "#833CF0",
+    backgroundColor: "white",
     paddingVertical: 20,
-    borderRadius: 20,
+    borderRadius: 40,
     alignItems: "center",
   },
   textView: {
@@ -46,8 +46,8 @@ touchable: {
     alignItems: "center",
   },
   text: {
-    color: "#ffffff",
+    color: "#833CF0",
     textTransform: "uppercase",
-    fontSize: 16,
+    fontSize: 13,
   },
 })
