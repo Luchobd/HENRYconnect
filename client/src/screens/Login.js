@@ -10,7 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const image = {
-  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672327364/Screenshot_2022-12-29_at_12.20.17_pn4bev.png",
+  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672339823/HENRYconnect/Screenshot_2022-12-29_at_15.50.12_lvz4df.png",
 };
 
 const Login = () => {
@@ -82,22 +82,32 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   register: {
-    fontWeight: "bold",
+    fontWeight:"800",
     fontSize: 14,
     letterSpacing: 1,
     opacity: 0.8,
     color: "#1239E2",
     textDecorationLine: "underline",
-    textShadowColor: "white",
-    textShadowOffset: { width: 0.4, height: 0.4 },
-    textShadowRadius: 0.01,
+    textShadowColor: 'rgba(255, 255, 255, 0.5)',
+     textShadowOffset: { width: 0.2, height: -0.5 },
+    textShadowRadius: 0.9,
+    height:"130%"
   },
   viewRegister: {
     width: "100%",
-    height: 50,
-    borderRadius: 5,
+    height: 15,
+    borderRadius: 40,
     justifyContent: "center",
     alignItems: "center",
+    shadowColor: "white",
+shadowOffset: {
+	width: 0,
+	height: 0,
+},
+shadowOpacity: 0.80,
+shadowRadius: 3.84,
+
+elevation: 2.9,
   },
   text: {
   // paddingTop: 40,
@@ -192,18 +202,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     justifyContent: "center",
     alignItems: "center",
-  },
-  // HenryContainer: {
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   flexDirection: "row",
-  // },
-  // Henry: {
-  //   fontFamily: "inter"
-  // },
-  // connect: {
-  //   fontFamily: "pacifico"
-  // }
+  }
 });
 
 export default Login;
