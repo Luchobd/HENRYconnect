@@ -14,7 +14,7 @@ import UserScreen from "./src/screens/UserScreen";
 //stack
 import EditProfile from "./src/components/Profile/EditProfile";
 import Login from "./src/screens/Login";
-import Registro from "./src/screens/Register";
+import Register from "./src/screens/Register";
 
 
 const Tab = createBottomTabNavigator();
@@ -26,7 +26,7 @@ function MyStack(){
       initialRouteName="Login">
       <HomeStackNavigator.Screen name="UserScreen" component={UserScreen} />
       <HomeStackNavigator.Screen name="Login" component={Login} />
-      <HomeStackNavigator.Screen name="Registro" component={Registro} />
+      <HomeStackNavigator.Screen name="Register" component={Register} />
       <HomeStackNavigator.Screen name="Stack" component={EditProfile}/>
       <HomeStackNavigator.Screen name="HomeScreen" component={MyTabs} />
       </HomeStackNavigator.Navigator>
