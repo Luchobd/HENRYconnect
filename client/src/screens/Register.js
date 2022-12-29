@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const Registro = () => {
+const Register = () => {
     const navigation = useNavigation();
   return (
     <View >
@@ -62,4 +62,4 @@ const Registro = () => {
   );
 }
 
-export default Registro;
+export default Register;
