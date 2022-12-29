@@ -118,7 +118,7 @@ const DropdownComponent = () => {
           maxHeight={300}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? "Seleccione país" : "..."}
+          placeholder={!isFocus ? "País" : "..."}
           searchPlaceholder="Buscar..."
           value={country}
           onFocus={() => setIsFocus(true)}
@@ -141,7 +141,7 @@ const DropdownComponent = () => {
           maxHeight={300}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? "Seleccione provincia o estado" : "..."}
+          placeholder={!isFocus ? "Provincia o estado" : "..."}
           searchPlaceholder="Buscar..."
           value={state}
           onFocus={() => setIsFocus(true)}
@@ -164,7 +164,7 @@ const DropdownComponent = () => {
           maxHeight={300}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? "Seleccione ciudad" : "..."}
+          placeholder={!isFocus ? "Ciudad" : "..."}
           searchPlaceholder="Buscar..."
           value={city}
           onFocus={() => setIsFocus(true)}
@@ -242,6 +242,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 5,
+    // color: "white"
   },
   label: {
     position: "absolute",

@@ -10,14 +10,15 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const image = {
-  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672259058/Screenshot_2022-12-28_at_17.23.55_ofc09t.png ",
+  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672327364/Screenshot_2022-12-29_at_12.20.17_pn4bev.png",
 };
+
 
 const Login = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <ImageBackground source={imageOriginal} resizeMode="cover" style={styles.image}>
         <View style={styles.inputContainers}>
           <TextInput placeholder="Ingresa tu email" style={styles.input} />
           <TextInput placeholder="Ingresa tu contraseña" style={styles.input} />

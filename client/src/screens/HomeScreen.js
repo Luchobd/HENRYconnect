@@ -11,19 +11,7 @@ const HomeScreen = () => {
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >
-      {/* <View>
-        <Text
-          style={{
-            fontSize: 30,
-            textAlign: "center",
-            marginTop: "40%",
-            color: "white",
-
-          }}
-        >
-          HENRYconnect
-        </Text>
-      </View> */}
+      
       <View>
         <AccordionList />
       </View>
