@@ -3,7 +3,7 @@
  * Las Instalaciones necesarias son las siguientes 
  * npm i --save @nestjs/websockets @nestjs/platform-socket.io socket.io
  */
-
+import {Logger} from '@nestjs/common'
 import {
   OnGatewayConnection,
   OnGatewayDisconnect,
@@ -17,7 +17,8 @@ import {
  * Hacemos importación de Server y de Socket desde socket.io
  */
 
-import { Server, Socket } from 'socket.io';
+import { Namespace, Server, Socket } from 'socket.io';
+import { ChatService } from './chat.service';
 
 /**
  * @WebSocketGateway
@@ -36,11 +37,14 @@ import { Server, Socket } from 'socket.io';
     //* pueden ser los siguientes origin: ['http://localhost:3000', 'mipagina.com', etc... ]
     origin: '*',
   },
+  namespace: 'chats'
 })
 
 export class ChatGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
+  private readonly logger = new Logger(ChatGateway.name);
+ // constructor(private readonly chatService: ChatService) {}
   /**
    * A la clase ChatGateway le vamos a implementar los metodos siguientes 
    ** LyfeCicle hooks 
@@ -58,7 +62,7 @@ export class ChatGateway
    ** OnGatewayDisconnect Obliga a implementar el método handleDisconnect(). 
    ** Toma la instancia de socket de cliente específica de la biblioteca como argumento.
    */
-  @WebSocketServer() server: Server;
+  @WebSocketServer() io: Namespace;
   /**
    * 
    * @param server 
@@ -70,20 +74,26 @@ export class ChatGateway
    */
 
   afterInit(server: any) {
-    console.log(`Esto se ejecuta cuando inicia`);
+    this.logger.log(`Websocket Gateway initialized`);
   }
   /**
    * 
    * @param client tiene información sobre los distintos clientes que se conectan
    * Como su id por ejemplo 
+   * el Namespace nos da acceso a toda la información de los sockets
+   * lo llamamos io, lo guardamos en la variable sockets y podemos acceder por ejemplo 
+   * a size, que es la cantidad de clientes conectados 
    */
 
   handleConnection(client: Socket) {
-    console.log(`Hola alguien se conecto al socket `);
+    const sockets = this.io.sockets
+
+    this.logger.log(`Hola alguien se conecto al socket, cliente con el ID ${client.id} `);
+    this.logger.debug(`Numero de sockets conectados: ${sockets.size}`)
   }
 
   handleDisconnect(client: Socket) {
-    console.log(`Alguien se desconecto del socket`);
+    this.logger.log(`Alguien se desconecto del socket, ID ${client.id}`);
   }
   /**
    * Ahora vamos a aprender a escuchar los eventos que vienen desde el front, XD 
@@ -126,7 +136,7 @@ export class ChatGateway
   ) {
     const { room, message } = payload;
     console.log(payload)
-    this.server.to(`room_${room}`).emit('new_message',message);
+    this.io.to(`room_${room}`).emit('new_message',message);
   }
 
   /*            3) 
