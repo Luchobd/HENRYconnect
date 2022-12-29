@@ -4,7 +4,8 @@ import {
   Text,
   View,
   TouchableOpacity,
-  ImageBackground, TextInput
+  ImageBackground,
+  TextInput,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -17,20 +18,11 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-
-
-        <TextInput
-          placeholder="Ingresa tu email"
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="Ingresa tu contraseña"
-          style={styles.input}
-        />
-
-        <View
-          style={styles.viewContainerButtons}
-        >
+        <View style={styles.inputContainers}>
+          <TextInput placeholder="Ingresa tu email" style={styles.input} />
+          <TextInput placeholder="Ingresa tu contraseña" style={styles.input} />
+        </View>
+        <View style={styles.viewContainerIngresar}>
           <TouchableOpacity
             onPress={() => navigation.navigate("HomeScreen")}
             style={{
@@ -39,40 +31,20 @@ const Login = () => {
               paddingHorizontal: 10,
             }}
           >
-            <View
-              style={{
-                width: "100%",
-                height: 50,
-                borderRadius: 5,
-                borderColor: "#DEDEDE",
-                borderWidth: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: "#833CF0",
-              }}
-            >
-              <Text
-                style={{
-                  fontWeight: "bold",
-                  fontSize: 14,
-                  letterSpacing: 1,
-                  opacity: 0.8,
-                  color: "white",
-                }}
-              >
-                Ingresar
-              </Text>
+            <View style={styles.button}>
+              <Text style={styles.buttonLoginText}>INGRESAR</Text>
             </View>
           </TouchableOpacity>
         </View>
 
         <View style={styles.viewContainerRegister}>
+          <Text style={styles.text}>No tienes cuenta?</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Register")}
             style={styles.buttonRegister}
           >
             <View style={styles.viewRegister}>
-              <Text style={styles.register}>Registrarse</Text>
+              <Text style={styles.register}> Registrate</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -89,29 +61,35 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   register: {
-    fontWeight: "bold",
+    // fontWeight: "bold",
     fontSize: 14,
     letterSpacing: 1,
     opacity: 0.8,
-    color: "white",
+    color: "blue",
+    textDecorationLine: "underline",
   },
   viewRegister: {
     width: "100%",
     height: 50,
     borderRadius: 5,
-    borderColor: "#DEDEDE",
-    borderWidth: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "gray",
+  },
+  text: {
+    // paddingTop: 40
   },
   buttonRegister: {
-    width: "80%",
-    paddingVertical: 30,
-    paddingHorizontal: 10,
+    // width: "80%",
+    // paddingHorizontal: 10,
   },
   viewContainerRegister: {
     width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    paddingTop: 30,
+  },
+  inputContainers: {
     justifyContent: "center",
     alignItems: "center",
   },
@@ -120,16 +98,34 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "#CDCDCD",
     marginLeft: 20,
-marginTop: 30,
+    marginTop: 30,
+    width: "70%",
   },
-  viewContainerButtons: {
+  viewContainerIngresar: {
     width: "100%",
     height: 20,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 150,
-  }
-  
+  },
+  buttonLoginText: {
+    fontWeight: "bold",
+    fontSize: 14,
+    letterSpacing: 1,
+    opacity: 0.8,
+    color: "white",
+  },
+  button: {
+    width: "100%",
+    borderRadius: 5,
+    borderColor: "#DEDEDE",
+    borderWidth: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#833CF0",
+    borderRadius: 50,
+    height: 80,
+  },
 });
 
 export default Login;
