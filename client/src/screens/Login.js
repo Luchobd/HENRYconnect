@@ -1,45 +1,20 @@
 import React from "react";
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, ImageBackground } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const Loguin = () => {
+const image = {url: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672259058/Screenshot_2022-12-28_at_17.23.55_ofc09t.png "}
+
+const Login = () => {
     const navigation = useNavigation();
   return (
-    <View >
+    <ImageBackground source={image} resizeMode="cover" style= {styles.image} >
       <Text style={{
         fontSize: 30,
         textAlign: "center",
         marginTop: "20%"
       }}
-      >Loguin</Text>
-                {/* <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('HomeScreen')
-            }
-            style={{
-              width: '100%',
-            }}>
-            <View
-              style={{
-                width: '100%',
-                height: 35,
-                borderRadius: 5,
-                borderColor: '#DEDEDE',
-                borderWidth: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: 14,
-                  letterSpacing: 1,
-                  opacity: 0.8,
-                }}>
-                Ingresar
-              </Text>
-            </View>
-          </TouchableOpacity> */}
+      >LogIn</Text>
+               
           <View
             style={{
             width: '100%',
@@ -132,8 +107,17 @@ const Loguin = () => {
           </View>
 
 
-    </View>
+    </ImageBackground>
   );
 }
+const styles = StyleSheet.create({
+  image: {
+      flex: 1,
+      justifyContent: "center",
+      width: "100%",
+      height: "100%",
+  }
+ 
+})
 
-export default Loguin;
+export default Login;
