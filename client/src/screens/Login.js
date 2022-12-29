@@ -95,11 +95,13 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 20,
-    borderBottomWidth: 1,
-    borderColor: "#CDCDCD",
     marginLeft: 20,
     marginTop: 30,
-    width: "70%",
+    width: "80%",
+    backgroundColor:'rgba(255,255,255,0.7)',
+    height: 60,
+    color:"black",
+    paddingHorizontal: 8,
   },
   viewContainerIngresar: {
     width: "100%",
@@ -124,7 +126,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#833CF0",
     borderRadius: 50,
-    height: 80,
+    height: 75,
   },
 });
 
