@@ -25,7 +25,7 @@ const LocationScreen = () => {
               
             }}
           >
-            Defina su ubicación
+            Definir ubicación
           </Text>
         </View>
         <View>
