@@ -106,9 +106,9 @@ const DropdownComponent = () => {
       {/* {renderLabel()} */}
       {/* //opcional */}
       {/* <StatusBar barStyle="light-content"/> */}
-      <View style={{ backgroundColor: "#fff", padding: 2, borderRadius: 15 }}>
+      <View>
         <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
+          style={[styles.dropdown, isFocus && { borderColor: "#833CF0" }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
@@ -131,7 +131,7 @@ const DropdownComponent = () => {
           }}
         />
         <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
+          style={[styles.dropdown, isFocus && { borderColor: "#833CF0" }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
@@ -154,7 +154,7 @@ const DropdownComponent = () => {
           }}
         />
         <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
+          style={[styles.dropdown, isFocus && { borderColor: "#833CF0" }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
@@ -227,17 +227,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#AF84F1",
-    padding: 16,
+    padding: 36,
     justifyContent: "center",
     alignContent: "center",
   },
   dropdown: {
     height: 50,
-    borderColor: "gray",
-    borderWidth: 0.5,
-    borderRadius: 8,
-    paddingHorizontal: 8,
+    borderColor: "white",
+    borderWidth: 3.5,
+    borderRadius: 30,
+    paddingHorizontal: 10,
     marginBottom: 10,
+    shadowColor: "black"
   },
   icon: {
     marginRight: 5,
@@ -253,9 +254,13 @@ const styles = StyleSheet.create({
   },
   placeholderStyle: {
     fontSize: 16,
+    color: "white"
   },
   selectedTextStyle: {
     fontSize: 16,
+    color: "white",
+    fontWeight:"bold"
+    
   },
   iconStyle: {
     width: 20,

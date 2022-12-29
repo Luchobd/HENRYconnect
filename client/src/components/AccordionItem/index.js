@@ -44,7 +44,9 @@ const AccordionItem = ({title, bodyText}) => {
       </TouchableOpacity>
       {showContent && (
         <View style={styles.body}>
-          <Text>{bodyText}</Text>
+          <TouchableOpacity>
+              <Text>{bodyText}</Text>
+          </TouchableOpacity>
         </View>
       )}
     </View>
