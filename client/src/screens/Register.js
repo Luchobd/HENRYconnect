@@ -10,7 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const image = {
-  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672259058/Screenshot_2022-12-28_at_17.23.55_ofc09t.png ",
+  uri: "https://res.cloudinary.com/do3dbemlj/image/upload/v1672339823/HENRYconnect/Screenshot_2022-12-29_at_15.50.12_lvz4df.png",
 };
 
 const Register = () => {
@@ -91,21 +91,24 @@ const Register = () => {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      height: 85
+      height: 70,
+  
     },
     inputContainers: {
       justifyContent: "center",
       alignItems: "center",
     },
     input: {
-      fontSize: 20,
+      fontSize: 16,
       marginLeft: 20,
       marginTop: 30,
       width: "80%",
-      backgroundColor:'rgba(255,255,255,0.7)',
+      backgroundColor:'rgba(255,255,255,0.5)',
       height: 60,
+      // marginTop: 20,
       color:"black",
       paddingHorizontal: 8,
+      paddingLeft: 20,
     },
     viewContainerIngresar: {
       width: "100%",
@@ -123,14 +126,12 @@ const Register = () => {
     },
     button: {
       width: "100%",
-      borderRadius: 5,
-      borderColor: "#DEDEDE",
       borderWidth: 1,
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "#833CF0",
       borderRadius: 50,
-      height: 75,
+      height: 70,
     },
   });
 
