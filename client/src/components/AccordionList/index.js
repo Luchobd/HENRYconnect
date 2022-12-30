@@ -9,12 +9,18 @@ const AccordionList = () => {
     {
       id: 0,
       title: "Canales",
-      body: "Acá irian los canales",
+      body: [
+        {name: "Buenos Aires", key: "1"},
+        {name: "Bogota", key: "2"},
+        {name: "Medellin", key: "3"},],
     },
     {
       id: 1,
       title: "Mensajes directos",
-      body: "Acá irian los mensajes",
+      body: [
+        {name: "Luis Blanco", key: "1"},
+        {name: "Mario Villalba", key: "2"},
+        {name: "Paula Celman", key: "3"},],
     },
     {
       id: 2,
@@ -63,7 +69,7 @@ export default AccordionList;
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: "20%",
+    paddingVertical: "5%",
     paddingHorizontal: "10%",
     height: "100%",
     fontSize: 19,
