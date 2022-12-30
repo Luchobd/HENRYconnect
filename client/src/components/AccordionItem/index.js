@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -8,10 +8,10 @@ import {
   LayoutAnimation,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {toggleAnimation} from '../../animations/toggleAnimation';
+import { toggleAnimation } from '../../animations/toggleAnimation';
 // import PropTypes from 'prop-types';
 
-const AccordionItem = ({title, bodyText}) => {
+const AccordionItem = ({ title, bodyText }) => {
   const [showContent, setShowContent] = useState(false);
   const animationController = useRef(new Animated.Value(0)).current;
 
@@ -34,17 +34,25 @@ const AccordionItem = ({title, bodyText}) => {
       <TouchableOpacity onPress={() => toggleListItem()}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{title}</Text>
-          <Animated.View style={{transform: [{rotateZ: arrowTransform}]}}>
-              <MaterialIcons
-                name={'keyboard-arrow-right'}
-                size={30}
-              />
+          <Animated.View style={{ transform: [{ rotateZ: arrowTransform }] }}>
+            <MaterialIcons
+              name={'keyboard-arrow-right'}
+              size={30}
+            />
           </Animated.View>
         </View>
       </TouchableOpacity>
       {showContent && (
         <View style={styles.body}>
-          <Text>{bodyText}</Text>
+          {bodyText.map((item) => {
+            return (
+              <View key={item.key} style={[styles.contenedor]}>
+                <TouchableOpacity>
+                  <Text style={[styles.text]}>{item.name}</Text>
+                </TouchableOpacity>
+              </View>
+            )
+          })}
         </View>
       )}
     </View>
@@ -52,6 +60,17 @@ const AccordionItem = ({title, bodyText}) => {
 };
 
 const styles = StyleSheet.create({
+  text: {
+    color: "white"
+  },
+
+  contenedor: {
+    width: '100%',
+    padding: '5%',
+    backgroundColor: "rgba(0,0,0,0.8)",
+    marginBottom: '2%',
+    overflow: 'hidden',
+  },
   container: {
     width: '100%',
     padding: '2%',
