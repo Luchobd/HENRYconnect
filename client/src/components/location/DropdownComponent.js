@@ -108,7 +108,7 @@ const DropdownComponent = () => {
       {/* <StatusBar barStyle="light-content"/> */}
       <View>
         <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: "#833CF0" }]}
+          style={[styles.dropdown, isFocus && { borderColor: "white" }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
@@ -131,7 +131,7 @@ const DropdownComponent = () => {
           }}
         />
         <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: "#833CF0" }]}
+          style={[styles.dropdown, isFocus && { borderColor: "white" }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
@@ -154,7 +154,7 @@ const DropdownComponent = () => {
           }}
         />
         <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: "#833CF0" }]}
+          style={[styles.dropdown, isFocus && { borderColor: "white" }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
@@ -226,7 +226,6 @@ export default DropdownComponent;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#AF84F1",
     padding: 36,
     justifyContent: "center",
     alignContent: "center",
