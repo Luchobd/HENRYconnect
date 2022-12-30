@@ -23,12 +23,7 @@ export const ProfileBody = ({
         >
           <Image
             source={profileImage}
-            style={{
-              resizeMode: "cover",
-              width: 80,
-              height: 80,
-              borderRadius: 100,
-            }}
+            style={styles.image}
           />
         </View>
         <View
@@ -84,31 +79,16 @@ export const ProfileBody = ({
         }}
       >
         <Text
-          style={{
-            width: "90%",
-            paddingVertical: 5,
-            fontSize: 14,
-            fontWeight: "bold",
-          }}
+         style={styles.textProfile}
         >
           {educationStatus}
         </Text>
       </View>
       <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingVertical: 5,
-        }}
+         style={styles.textView}
       >
         <Text
-          style={{
-            width: "90%",
-            paddingVertical: 5,
-            fontSize: 14,
-          }}
+          style={styles.textProfile}
         >
           Ubicacion Actual: {city}
         </Text>
@@ -127,7 +107,7 @@ export const ProfileButtons = ({
 }) => {
   const navigation = useNavigation();
   return (
-    <>
+    <View style={styles.buttons}>
       <View
         style={styles.buttonView}
       >
@@ -166,18 +146,13 @@ export const ProfileButtons = ({
           >
             <Text
                style={styles.text}
-              //   fontWeight: "bold",
-              //   fontSize: 14,
-              //   letterSpacing: 1,
-              //   opacity: 0.8,
-              // }}
             >
               Log Out
             </Text>
           </View>
         </TouchableOpacity>
       </View>
-    </>
+    </View>
   );
 };
 
@@ -188,7 +163,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     paddingVertical: 20,
   },
-
+buttons: {
+  marginTop: 135
+},
   buttonView: {
     width: "100%",
     paddingHorizontal: "10%",
@@ -196,7 +173,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   button: {
-    backgroundColor: "white",
+    backgroundColor: "#5947C2",
     paddingVertical: 20,
     borderRadius: 40,
     alignItems: "center",
@@ -210,10 +187,34 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: "#833CF0",
+    color: "white",
     textTransform: "uppercase",
-    fontSize: 13,
+    fontSize: 16,
+    fontWeight: "bold"
   },
+  // textView: {
+  //   width: "100%",
+  //   flexDirection: "row",
+  //   alignItems: "center",
+  //   justifyContent: "space-evenly",
+  //   paddingVertical: 5,
+  // },
+  image: {
+    resizeMode: "cover",
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+  },
+  textProfile: {
+    width: "90%",
+    paddingVertical: 5,
+    fontSize: 16,
+    color: "white"
+  },
+  textProfileBold: {
+    fontWeight: "bold"
+  }
+
 });
 
 // ButtonView: {
