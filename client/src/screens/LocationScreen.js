@@ -8,8 +8,8 @@ import DropdownButton from "../components/location/DropdownButton";
 const LocationScreen = () => {
   return (
     <LinearGradient
-      style={styles.container}
-      colors={["#B591EC", "#833CF0"]}
+      style={styles.gradient}
+      colors={["#5947C2", "#877BC9"]}
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >
@@ -20,9 +20,8 @@ const LocationScreen = () => {
               fontSize: 22,
               textAlign: "center",
               marginTop: "20%",
-              color:"white",
-              fontWeight:"bold"
-              
+              color: "white",
+              fontWeight: "bold",
             }}
           >
             Definir ubicación
@@ -30,8 +29,8 @@ const LocationScreen = () => {
         </View>
         <View>
           {/* <Maps /> */}
-          <DropdownComponent/> 
-      <DropdownButton/> 
+          <DropdownComponent />
+          <DropdownButton />
         </View>
       </View>
     </LinearGradient>
@@ -40,10 +39,16 @@ const LocationScreen = () => {
 export default LocationScreen;
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+    backgroundColor: "red",
+    justifyContent: "center",
+    // alignItems: "center",
+  },
   container: {
-    // backgroundColor: '#AF84F1',
+
   },
   title: {
-    // backgroundColor: 'black',
-  },
+
+  }
 });

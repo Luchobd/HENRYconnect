@@ -49,7 +49,7 @@ function MyTabs() {
         // headerTitleAlign: "left",
       
         tabBarStyle: {
-            backgroundColor: "#833CF0",
+            backgroundColor: "#5947C2",
             height: 76
           },
         //  tabBarActiveBackgroundColor: "#5037B6",

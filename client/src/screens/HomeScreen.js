@@ -7,7 +7,7 @@ const HomeScreen = () => {
   return (
     <LinearGradient
       style={styles.container}
-      colors={["#B591EC", "#833CF0"]}
+      colors={["#5947C2", "#877BC9"]}
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
     >

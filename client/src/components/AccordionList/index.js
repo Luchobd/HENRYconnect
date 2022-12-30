@@ -48,22 +48,7 @@ const AccordionList = () => {
   );
 };
 
-// AccordionList.propTypes = {
-//   data: PropTypes.array.isRequired,
-//   customTitle: PropTypes.func.isRequired,
-//   customBody: PropTypes.func.isRequired,
-//   customIcon: PropTypes.func,
-//   containerItemStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-//   animationDuration: PropTypes.number,
-//   isRTL: PropTypes.bool,
-// };
 
-// AccordionList.defaultProps = {
-//   customIcon: null,
-//   containerStyle: null,
-//   animationDuration: 300,
-//   isRTL: false,
-// };
 
 export default AccordionList;
 
@@ -78,12 +63,5 @@ const styles = StyleSheet.create({
   flatList: {
     fontSize: 19,
     color: "#A8EB12",
-    // borderRadius: 40, 
   },
-  //   item: {
-  // alignItems: "center",
-  // flexDirection: "row",
-  // paddingVertical: 10,
-  // paddingHorizontal: 20,
-  //   }
 });
