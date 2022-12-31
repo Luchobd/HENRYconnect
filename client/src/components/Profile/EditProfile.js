@@ -5,9 +5,10 @@ import {
   TouchableOpacity,
   ToastAndroid,
   Image,
-  TextInput
+  TextInput, StyleSheet
 } from  'react-native';
 import Ionic from 'react-native-vector-icons/Ionicons';
+import { LinearGradient } from "expo-linear-gradient";
 
 const EditProfile = ({route, navigation}) => {
   const {firstName, lastName, profileImage, description, educationStatus} = route.params
@@ -15,12 +16,13 @@ const EditProfile = ({route, navigation}) => {
     ToastAndroid.show('Edited Sucessfully !', ToastAndroid.SHORT);
   };
   return (
-    <View
-    style={{
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'white',
-    }}>
+    <LinearGradient
+      style={styles.gradient}
+      colors={["#5947C2", "#877BC9"]}
+      // dark first
+      start={{ x: 0.5, y: 0 }}
+      end={{ x: 0.5, y: 1 }}
+    >
 
           {/* <View
         style={{
@@ -126,38 +128,44 @@ const EditProfile = ({route, navigation}) => {
         </View>
       </View>
       <TouchableOpacity
-          style={{
-              width: '100%',
-              paddingVertical: 150,
-              paddingHorizontal: 10,
-              
-              
-            }}>
+          style={styles.button}>
             <View
-              style={{
-                width: '100%',
-                height: 35,
-                borderRadius: 5,
-                borderColor: '#DEDEDE',
-                borderWidth: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: "#833CF0",
-              }}>
+           style={styles.textButtonView}>
               <Text
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: 14,
-                  letterSpacing: 1,
-                  opacity: 0.8,
-                  color: "white"
-                }}>
+                style={styles.textButton}>
                 Save
               </Text>
             </View>
           </TouchableOpacity>
-    </View>
+    </LinearGradient>
   );
 }
 
 export default EditProfile;
+
+const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  button: {
+    backgroundColor: "#5947C2",
+    paddingVertical: 20,
+    borderRadius: 40,
+    alignItems: "center",
+    marginTop: 18,
+  },
+  textButtonView: {
+    height: 30,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  textButton: {
+    color: "white",
+    textTransform: "uppercase",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+
+});
