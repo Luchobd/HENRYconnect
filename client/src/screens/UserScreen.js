@@ -40,6 +40,7 @@ const UserScreen = () => {
 };
 
 export default UserScreen;
+
 const styles = StyleSheet.create({
   gradient: {
     flex: 1,
