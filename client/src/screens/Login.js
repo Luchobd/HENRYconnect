@@ -5,7 +5,8 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
-  TextInput, Image
+  TextInput,
+  Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -42,19 +43,15 @@ const Login = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={ styles.gB}>
+        <View style={styles.gB}>
           <View>
-            <Text style={ styles.textSignInG}>o ingresa con Google</Text>
+            <Text style={styles.textSignInG}>o ingresa con Google</Text>
           </View>
           <TouchableOpacity style={styles.buttonG}>
             <View style={styles.insideGoogB}>
-
-          <Image
-        style={styles.G}
-        source={require('../assets/g.png')}
-        />
-            <Text style={styles.gText}>Google</Text>
-        </View>
+              <Image style={styles.G} source={require("../assets/g.png")} />
+              <Text style={styles.gText}>Google</Text>
+            </View>
           </TouchableOpacity>
         </View>
 
@@ -82,16 +79,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   register: {
-    fontWeight:"800",
+    fontWeight: "800",
     fontSize: 14,
     letterSpacing: 1,
     opacity: 0.8,
     color: "#1239E2",
     textDecorationLine: "underline",
-    textShadowColor: 'rgba(255, 255, 255, 0.5)',
-     textShadowOffset: { width: 0.2, height: -0.5 },
+    textShadowColor: "rgba(255, 255, 255, 0.5)",
+    textShadowOffset: { width: 0.2, height: -0.5 },
     textShadowRadius: 0.9,
-    height:"130%"
+    height: "130%",
   },
   viewRegister: {
     width: "100%",
@@ -100,17 +97,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     shadowColor: "white",
-shadowOffset: {
-	width: 0,
-	height: 0,
-},
-shadowOpacity: 0.80,
-shadowRadius: 3.84,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 3.84,
 
-elevation: 2.9,
+    elevation: 2.9,
   },
   text: {
-  // paddingTop: 40,
+    // paddingTop: 40,
     color: "white",
   },
   buttonRegister: {
@@ -133,7 +130,6 @@ elevation: 2.9,
     fontSize: 16,
     marginLeft: 20,
     marginTop: 20,
-    // marginBottom: 40,
     width: "80%",
     backgroundColor: "rgba(255,255,255,0.5)",
     height: 70,
@@ -167,7 +163,6 @@ elevation: 2.9,
   G: {
     height: 22,
     width: 22,
-  
   },
   insideGoogB: {
     justifyContent: "center",
@@ -177,17 +172,15 @@ elevation: 2.9,
   gText: {
     fontSize: 16,
     color: "white",
-    paddingLeft: 16
+    paddingLeft: 16,
   },
   textSignInG: {
     color: "white",
-
   },
   gB: {
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
-
   },
   buttonG: {
     fontSize: 16,
@@ -202,7 +195,7 @@ elevation: 2.9,
     borderWidth: 1.5,
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
 });
 
 export default Login;
