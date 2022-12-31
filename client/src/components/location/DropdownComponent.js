@@ -27,7 +27,7 @@ const DropdownComponent = () => {
       method: "get",
       url: `${BASE_URL}/countries`,
       headers: {
-        "X-CSCAPI-KEY": "TnA1c09zRTZYd29ZYU1DbTh2anpCQXVNSUVJQU5kR202b0pTSGRJRw=="
+        "X-CSCAPI-KEY": API_KEY
       },
     };
 
@@ -53,7 +53,7 @@ const DropdownComponent = () => {
       method: "get",
       url: `${BASE_URL}/countries/${countryCode}/states`,
       headers: {
-        "X-CSCAPI-KEY": "TnA1c09zRTZYd29ZYU1DbTh2anpCQXVNSUVJQU5kR202b0pTSGRJRw=="
+        "X-CSCAPI-KEY": API_KEY
       },
     };
 
@@ -80,7 +80,7 @@ const DropdownComponent = () => {
       method: "get",
       url: `${BASE_URL}/countries/${countryCode}/states/${stateCode}/cities`,
       headers: {
-        "X-CSCAPI-KEY": "TnA1c09zRTZYd29ZYU1DbTh2anpCQXVNSUVJQU5kR202b0pTSGRJRw=="
+        "X-CSCAPI-KEY": API_KEY
       },
     };
     axios(config)
@@ -175,46 +175,7 @@ const DropdownComponent = () => {
             setIsFocus(false);
           }}
         />
-        {/* <View
-          style={{
-            width: '100%',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            paddingVertical: 5,
-          }}>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.push('EditProfile', {
-                name: name,
-                profileImage: profileImage,
-              })
-            }
-            style={{
-              width: '100%',
-            }}>
-            <View
-              style={{
-                width: '100%',
-                height: 35,
-                borderRadius: 5,
-                borderColor: '#DEDEDE',
-                borderWidth: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: 14,
-                  letterSpacing: 1,
-                  opacity: 0.8,
-                }}>
-                Edit Profile
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View> */}
+       
       </View>
 
     </View>
