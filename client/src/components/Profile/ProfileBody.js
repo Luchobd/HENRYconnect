@@ -13,105 +13,25 @@ export const ProfileBody = ({
 }) => {
   return (
     <View>
-      <View
-        style={styles.container}
-      >
-        <View
-          style={{
-            alignItems: "center",
-          }}
-        >
-          <Image
-            source={profileImage}
-            style={{
-              resizeMode: "cover",
-              width: 80,
-              height: 80,
-              borderRadius: 100,
-            }}
-          />
-        </View>
-        <View
-          style={{
-            alignItems: "center",
-            width: "50%",
-          }}
-        >
-          <Text
-            style={{
-              paddingVertical: 5,
-              fontWeight: "bold",
-              fontSize: 25,
-            }}
-          >
+      <View style={styles.container}>
+        <View style={styles.viewImage}>
+          <Image source={profileImage} style={styles.image} />
+        </View >
+        <View >
+          <Text style={styles.textName}>
             {firstName} {lastName}
           </Text>
-          <Text
-            style={{
-              paddingVertical: 0,
-            }}
-          >
-            {country}
-          </Text>
+          <Text style={styles.textLocation}>{country}</Text>
         </View>
       </View>
-      <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingVertical: 5,
-        }}
-      >
-        <Text
-          style={{
-            width: "90%",
-            paddingVertical: 5,
-            fontSize: 14,
-          }}
-        >
-          {description}
-        </Text>
+      <View style={styles.textDescriptionView}>
+        <Text style={styles.textDescription}>{description}</Text>
       </View>
-      <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingVertical: 5,
-        }}
-      >
-        <Text
-          style={{
-            width: "90%",
-            paddingVertical: 5,
-            fontSize: 14,
-            fontWeight: "bold",
-          }}
-        >
-          {educationStatus}
-        </Text>
+      <View style={styles.textEducationView}>
+        <Text style={styles.textEducation}>{educationStatus}</Text>
       </View>
-      <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingVertical: 5,
-        }}
-      >
-        <Text
-          style={{
-            width: "90%",
-            paddingVertical: 5,
-            fontSize: 14,
-          }}
-        >
-          Ubicacion Actual: {city}
-        </Text>
+      <View style={styles.textView}>
+        <Text style={styles.textLocation}>Ubicacion Actual: {city}</Text>
       </View>
     </View>
   );
@@ -127,10 +47,8 @@ export const ProfileButtons = ({
 }) => {
   const navigation = useNavigation();
   return (
-    <>
-      <View
-        style={styles.buttonView}
-      >
+    <View style={styles.buttons}>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() =>
             navigation.push("Stack", {
@@ -143,41 +61,20 @@ export const ProfileButtons = ({
           }
           style={styles.button}
         >
-          <View
-          style= {styles.textView}
-          >
-            <Text
-              style={styles.text}
-            >
-              Edit Profile
-            </Text>
+          <View style={styles.textButtonView}>
+            <Text style={styles.textButton}>Edit Profile</Text>
           </View>
         </TouchableOpacity>
       </View>
 
-      <View
-        style={styles.buttonView}
-      >
-        <TouchableOpacity
-          style={styles.button}
-        >
-          <View
-             style={styles.textView}
-          >
-            <Text
-               style={styles.text}
-              //   fontWeight: "bold",
-              //   fontSize: 14,
-              //   letterSpacing: 1,
-              //   opacity: 0.8,
-              // }}
-            >
-              Log Out
-            </Text>
+      <View style={styles.buttonView}>
+        <TouchableOpacity style={styles.button}>
+          <View style={styles.textButtonView}>
+            <Text style={styles.textButton}>Log Out</Text>
           </View>
         </TouchableOpacity>
       </View>
-    </>
+    </View>
   );
 };
 
@@ -188,7 +85,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     paddingVertical: 20,
   },
-
+  buttons: {
+    marginTop: 135,
+  },
   buttonView: {
     width: "100%",
     paddingHorizontal: "10%",
@@ -196,33 +95,69 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   button: {
-    backgroundColor: "white",
+    backgroundColor: "#5947C2",
     paddingVertical: 20,
     borderRadius: 40,
     alignItems: "center",
-    marginTop: 18
+    marginTop: 18,
   },
-  textView: {
-    width: "100%",
+  textButtonView: {
     height: 30,
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
   },
-  text: {
-    color: "#833CF0",
+  textButton: {
+    color: "white",
     textTransform: "uppercase",
-    fontSize: 13,
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  textDescription: {
+    width: "90%",
+    paddingVertical: 5,
+    fontSize: 14,
+    color: "white",
+  },
+  textDescriptionView: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    paddingVertical: 5,
+  },
+  viewImage: {
+    alignItems: "center",
+  },
+  image: {
+    resizeMode: "cover",
+    width: 120,
+    height: 120,
+    borderRadius: 100,
+  },
+  textEducationView: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    paddingVertical: 5,
+  },
+  textEducation: {
+    width: "90%",
+    paddingVertical: 5,
+    fontSize: 16,
+    color: "white",
+  },
+  textLocation: {
+    width: "90%",
+    paddingVertical: 5,
+    fontSize: 16,
+    color: "white",
+    marginLeft: 20,
+  },
+  textName: {
+    paddingVertical: 5,
+    fontWeight: "bold",
+    fontSize: 25,
+    color: "white",
   },
 });
 
-// ButtonView: {
-//   width: "100%",
-//   flexDirection: "row",
-//   alignItems: "center",
-//   justifyContent: "space-evenly",
-//   paddingVertical: 5,
-// }
-// button: {
-//   width: "100%",
-// }
