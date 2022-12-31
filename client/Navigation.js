@@ -50,7 +50,9 @@ function MyTabs() {
       
         tabBarStyle: {
             backgroundColor: "#5947C2",
-            height: 76
+            height: 80,
+            outline: "red",
+            paddingTop: 7
           },
         //  tabBarActiveBackgroundColor: "#5037B6",
         tabBarActiveTintColor: "white",
@@ -69,7 +71,7 @@ function MyTabs() {
             iconName = focused ? "person" : "person-outline";
           }
 
-          return <Ionicons name={iconName} size={37} color={color} />;
+          return <Ionicons name={iconName} size={30} color={color} />;
         },
         tabBarActiveTintColor: "white",
         tabBarInactiveTintColor: "#F4F2F6",
